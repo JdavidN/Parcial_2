@@ -16,15 +16,13 @@ public class PanelEntradaDatos extends JPanel
     //Atributos
     private ImageIcon iImagen;
     private JLabel lbImagen;
-    private JLabel lbVariable1;
-    private JLabel lbVariable2;
-    private JLabel lbVAriable3;
-    private JLabel lbVariable4;
+    private JLabel lbNumCuenta;
+    private JLabel lbDeposito;
+  
     private JLabel lbTipoEdicion;
-    private JTextField tfVariable1;
-    private JTextField tfVariable2;
-    private JTextField tfVAriable3;
-    private JTextField tfVariable4;
+    private JTextField tfNumCuenta;
+    private JTextField tfDeposito;
+ 
     private JRadioButton rbTipoEdicion;
     
     //------------------------
@@ -39,48 +37,32 @@ public class PanelEntradaDatos extends JPanel
         setBackground(Color.WHITE);
         
         //Creación y adicion de la imagen
-        iImagen = new ImageIcon(getClass().getResource("descarga.jpeg"));
+        iImagen = new ImageIcon(getClass().getResource("Banco.jpg"));
         lbImagen = new JLabel(iImagen);
-        lbImagen.setBounds(10,20,250,276);
+        lbImagen.setBounds(10,10,250,276);
         add(lbImagen);
         
         //Creación y adición de etiquetas
-        lbVariable1 = new JLabel("Dato1: ");
-        lbVariable1.setBounds(276,30,250,30);
-        add(lbVariable1);
+        lbNumCuenta = new JLabel("Ingrese Número de Cuenta: ");
+        lbNumCuenta.setBounds(280,80,250,30);
+        add(lbNumCuenta);
         
-        lbVariable2 = new JLabel("Dato2: ");
-        lbVariable2.setBounds(276,80,250,30);
-        add(lbVariable2);
+        lbDeposito = new JLabel("Ingrese el Deposito Inicial: ");
+        lbDeposito.setBounds(280,150,250,30);
+        add(lbDeposito);
         
-        lbVAriable3 = new JLabel("Dato3: ");
-        lbVAriable3.setBounds(276,130,250,30);
-        add(lbVAriable3);
 
-        lbVariable4 = new JLabel("Dato4: ");
-        lbVariable4.setBounds(276,180,250,30);
-        add(lbVariable4);
-
-        lbTipoEdicion = new JLabel("Marca la opción si es una edición de lujo: ");
-        lbTipoEdicion.setBounds(276,230,250,30);
-        add(lbTipoEdicion);
         
         //Creación y adición de campos de texto
-        tfVariable1 = new JTextField();
-        tfVariable1.setBounds(526, 30, 120, 30);
-        add(tfVariable1);
+        tfNumCuenta = new JTextField();
+        tfNumCuenta.setBounds(460, 80, 120, 30);
+        add(tfNumCuenta);
         
-        tfVariable2 = new JTextField();
-        tfVariable2.setBounds(526, 80, 120, 30);
-        add(tfVariable2);
+        tfDeposito = new JTextField();
+        tfDeposito.setBounds(460, 150, 120, 30);
+        add(tfDeposito);
 
-        tfVAriable3 = new JTextField();
-        tfVAriable3.setBounds(526, 130, 120, 30);
-        add(tfVAriable3);
-
-        tfVariable4 = new JTextField();
-        tfVariable4.setBounds(526, 180, 120, 30);
-        add(tfVariable4);
+  
 
         rbTipoEdicion = new JRadioButton();
         rbTipoEdicion.setBounds(526, 230, 120, 30);
@@ -93,39 +75,25 @@ public class PanelEntradaDatos extends JPanel
     }
     
     //Metodos de acceso a la información de las cajas de texto
-    public String getNomLib()
+
+    public String getNumCuenta()
     {
-        return (String) tfVariable1.getText();
+        return (String) tfNumCuenta.getText();
     }
 
-    public String getNomAutor()
+    public String getDep()
     {
-        return (String) tfVariable2.getText();
-    }
-
-    public String getNomAutores()
-    {
-        return tfVAriable3.getText();
+        return (String) tfDeposito.getText();
     }
     
-    public String getAnioEdicion()
-    {
-        return tfVariable4.getText();
-    }
-
-    public String getTipoEdicion()
-    {
-        return rbTipoEdicion.getText();
-    }
 
 
     //Metodo para borrar cajas de texto
     public void borrar()
     {
-        tfVariable1.setText("");
-        tfVariable2.setText("");
-        tfVAriable3.setText("");
-        tfVariable4.setText("");
+        tfNumCuenta.setText("");
+        tfDeposito.setText("");
+       
         rbTipoEdicion.setText("");
     }
 

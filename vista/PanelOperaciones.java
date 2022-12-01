@@ -13,8 +13,8 @@ public class PanelOperaciones extends JPanel
     //----------------------
     //Atributos
     //----------------------
-    public JButton btInfoLibro;
-    public JButton btInfoLibroColeccion;
+    public JButton btInfoCuenta;
+    public JButton btRetirar;
     public JButton btBorrar;
     public JButton btSalir;
     
@@ -30,17 +30,17 @@ public class PanelOperaciones extends JPanel
         setBackground(Color.WHITE);
         
         //Creación y adicion de los botones
-        btInfoLibro = new JButton("Mostrar info libro");
-        btInfoLibro.setFont(new Font("Arial", BOLD, 12));
-        btInfoLibro.setBounds(30, 30, 140, 30);
-        add(btInfoLibro);
-        btInfoLibro.setActionCommand("MostrarInfoLibro");
+        btInfoCuenta = new JButton("Mostrar info Cuenta");
+        btInfoCuenta.setFont(new Font("Arial", BOLD, 12));
+        btInfoCuenta.setBounds(30, 30, 160, 30);
+        add(btInfoCuenta);
+        btInfoCuenta.setActionCommand("MostrarInfoCuenta");
 
-        btInfoLibroColeccion = new JButton("Mostrar info libro colección");
-        btInfoLibroColeccion.setFont(new Font("Arial", BOLD, 12));
-        btInfoLibroColeccion.setBounds(200, 30, 200, 30);
-        add(btInfoLibroColeccion);
-        btInfoLibroColeccion.setActionCommand("MostrarInfoLibroColeccion");
+        btRetirar = new JButton("Retirar");
+        btRetirar.setFont(new Font("Arial", BOLD, 12));
+        btRetirar.setBounds(200, 30, 80, 30);
+        add(btRetirar);
+        btRetirar.setActionCommand("Retiros");
 
 
         //Crear y agrear boton Borrar
@@ -65,16 +65,16 @@ public class PanelOperaciones extends JPanel
 
     public void agregarOyentesBotones(ActionListener pAL)
     {
-        btInfoLibro.addActionListener(pAL);
-        btInfoLibroColeccion.addActionListener(pAL);
+        btInfoCuenta.addActionListener(pAL);
+        btRetirar.addActionListener(pAL);
         btBorrar.addActionListener(pAL);
         btSalir.addActionListener(pAL);
     }
     
     public void activarBotones()
     {
-        btInfoLibro.setEnabled(true);
-        btInfoLibroColeccion.setEnabled(true);
+        btInfoCuenta.setEnabled(true);
+        btRetirar.setEnabled(true);
         btBorrar.setEnabled(true);
         btSalir.setEnabled(true);
     }

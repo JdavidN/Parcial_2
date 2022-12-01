@@ -9,7 +9,7 @@ public class VentanaPrincipal extends JFrame
     public PanelEntradaDatos miPanelEntradaDatos;
     public PanelOperaciones miPanelOperaciones;
     public PanelResultados miPanelResultados;
-    public LibroDeColeccion miLibroDeColeccion;
+    
 
 
     //-------------------------
@@ -39,7 +39,7 @@ public class VentanaPrincipal extends JFrame
         add(miPanelResultados);
         
         //Caracteristicas de la ventana
-        setTitle("Biblioteca");
+        setTitle("Banco UIS");
         setSize(700,700);
         //setLocation(10,10);
         setLocationRelativeTo(null);
@@ -49,9 +49,9 @@ public class VentanaPrincipal extends JFrame
     }
 
     //Crear ventana Libro de colección
-    public void crearVentanaLibroColeccion()
-    {
-        miLibroDeColeccion = new LibroDeColeccion();
-    }
+    //public void crearVentanaLibroColeccion()
+    //{
+   //     miLibroDeColeccion = new LibroDeColeccion();
+   // }
     
 }
