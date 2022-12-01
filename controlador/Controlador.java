@@ -2,8 +2,10 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import modelo.Libro;
-import modelo.LibroDeColeccion;
+import modelo.Cuenta;
+import modelo.CuentaAhorro;
+import modelo.CuentaCorriente;
+import modelo.Libreta2022;
 import vista.VentanaPrincipal;
 
 public class Controlador implements ActionListener
@@ -11,8 +13,8 @@ public class Controlador implements ActionListener
     //Atributos
     //----------------------------
     private VentanaPrincipal venPrin;
-    private Libro model;
-    private LibroDeColeccion model2;
+    private Cuenta model;
+    
     
     
     //----------------------------
@@ -20,7 +22,7 @@ public class Controlador implements ActionListener
     //----------------------------
     
     //Constructor
-    public Controlador(VentanaPrincipal venPrin, Libro model)
+    public Controlador(VentanaPrincipal venPrin, Cuenta model)
     
     {
 
@@ -43,13 +45,13 @@ public class Controlador implements ActionListener
             try 
             {
                 
-                String nombreLibro = venPrin.miPanelEntradaDatos.getNomLib();
-                String nombreAutor = venPrin.miPanelEntradaDatos.getNomAutor();
-                String nombreAutores = venPrin.miPanelEntradaDatos.getNomAutores();
-                int anioEdicion = Integer.parseInt(venPrin.miPanelEntradaDatos.getAnioEdicion());
+                int numeroCuenta = Integer.parseInt(venPrin.miPanelEntradaDatos.getNumCuenta());
+                int deposito = Integer.parseInt(venPrin.miPanelEntradaDatos.getDep());
+        
+               
 
-                model = new Libro(nombreLibro, nombreAutor, nombreAutores, anioEdicion);
-                venPrin.miPanelResultados.mostrarResultado("Información del libro: \nNombre del libro: " + model.getVariable1() + "\nNombre del autor: " + model.getVariable2() + " " + model.getVariable3() + "\nAño de edición: " + model.getVariable4() );
+                model = new Cuenta(numeroCuenta, deposito);
+                venPrin.miPanelResultados.mostrarResultado("Información de la cuenta: \nNumero de cuenta: " + model.getNumeroCuenta() + "\nDeposito inicial: " + model.getDeposito() + "\nFondos Totales: " + model.getFondosCuenta() );
                 venPrin.miPanelOperaciones.activarBotones();
             
             } catch (Exception e)
@@ -68,12 +70,7 @@ public class Controlador implements ActionListener
           //  venPrin.miLibroDeColeccion.cerrarDialogo();
         }
 
-        if(comando.equals("MostrarInfoLibroColeccion"))
-        {   
-            venPrin.crearVentanaLibroColeccion();
-            this.venPrin.miLibroDeColeccion.agregarOyentesBotones(this);
-        }
-
+      
         if(comando.equals("borrar"))
         {
             this.venPrin.miPanelEntradaDatos.borrar();
