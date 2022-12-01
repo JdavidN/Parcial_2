@@ -5,6 +5,7 @@ public class Cuenta
     protected int numeroCuenta;
     protected int deposito;
     protected double fondosCuenta;
+    private double retiro;
 
     public Cuenta(int pNumCuenta, int pDeposito)
     {
@@ -46,6 +47,28 @@ public class Cuenta
    {
        this.fondosCuenta = fondosCuenta;
    }
+
+   public void retirar()
+   {
+    if(fondosCuenta>retiro)
+   {
+
+    fondosCuenta= fondosCuenta-retiro;
+    
+   }
+   else
+   {
+
+    System.out.println("no es posible realizar el retiro fondos insufucuentes");
+
+   }
+   }
+
+public char[] calcularFondos() {
+    return null;
+}
+   
+
 
 
    

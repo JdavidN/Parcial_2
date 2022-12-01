@@ -16,7 +16,11 @@ public class CuentaAhorro extends Cuenta
 
     public void calcularFondos()
     {
-        fondosCuenta = deposito - (deposito *interes) ;
+        fondosCuenta = deposito + (deposito *interes) ;
     }
 
+    public void retirar()
+    {
+        
+    }
 }
