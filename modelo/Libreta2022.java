@@ -18,7 +18,7 @@ public class Libreta2022 extends Cuenta
 
     public void calcularFondos()
     {
-        fondosCuenta = deposito - (deposito *interes) ;
+        fondosCuenta = deposito + (deposito *interes) ;
     }
 
     
